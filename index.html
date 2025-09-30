@@ -1,0 +1,197 @@
+<!--
+  Responsive HTML Template
+  - Minimal, accessible, mobile-first layout
+  - Includes header, hero, features, CTA, and footer
+  - Small CSS + interactive mobile nav and theme toggle
+  - Edit freely
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Responsive HTML Template</title>
+  <meta name="description" content="A clean, responsive HTML template with hero, features and CTA." />
+  <style>
+    :root{
+      --bg:#0f1724; /* dark navy */
+      --card:#ffffff;
+      --muted:#9ca3af;
+      --accent:#2563eb;
+      --radius:12px;
+      --container:1100px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:linear-gradient(180deg,#071025 0%,#0f1724 100%);
+      color:var(--card);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding:24px;
+      display:flex;
+      justify-content:center;
+    }
+    .wrap{width:100%;max-width:var(--container)}
+
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav{display:flex;gap:16px;align-items:center}
+    nav a{color:var(--card);text-decoration:none;font-weight:600}
+    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-bottom:40px}
+    .hero h1{font-size:clamp(28px,5vw,48px);margin:0 0 12px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .card{background:rgba(255,255,255,0.04);padding:20px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+
+    /* Features */
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:36px}
+    .feature{padding:18px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));}
+    .feature h3{margin:0 0 8px}
+    .muted{color:var(--muted)}
+
+    footer{color:var(--muted);font-size:14px;padding:18px 0;border-top:1px solid rgba(255,255,255,0.03)}
+
+    /* Responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      nav{display:none}
+      .mobile-nav-toggle{display:inline-flex}
+    }
+    .mobile-nav-toggle{display:none;background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px;border-radius:8px;color:var(--card)}
+
+    /* utility */
+    .stack{display:flex;flex-direction:column;gap:8px}
+    .row{display:flex;gap:12px;align-items:center}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden>RB</div>
+        <div>
+          <div style="font-weight:800">RocketBootstrap</div>
+          <div class="muted" style="font-size:12px">Small, fast templates</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#docs">Docs</a>
+        <a class="btn" href="#get">Get started</a>
+      </nav>
+
+      <button class="mobile-nav-toggle" aria-label="Toggle menu" id="mobileToggle">☰</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>Build faster with a clean, responsive starting point</h1>
+          <p class="muted">A minimal, accessible HTML template with sensible defaults. Drop in your content, tweak the styles, and ship.</p>
+          <div class="row">
+            <a class="btn" href="#get">Download</a>
+            <a href="#docs" style="color:var(--card);text-decoration:underline">Explore docs</a>
+          </div>
+
+          <div style="margin-top:18px" class="card">
+            <strong>Perfect for:</strong>
+            <ul style="margin:8px 0 0 18px;color:var(--muted)">
+              <li>Landing pages</li>
+              <li>Prototypes</li>
+              <li>Small marketing sites</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="card" aria-hidden>
+          <h3 style="margin-top:0">Quick stats</h3>
+          <div class="stack">
+            <div class="row"><strong>Performance:</strong><span class="muted"> Extremely lightweight</span></div>
+            <div class="row"><strong>Accessibility:</strong><span class="muted"> Semantic markup</span></div>
+            <div class="row"><strong>Customizable:</strong><span class="muted"> CSS variables</span></div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="features">
+        <h2 style="margin-top:0">Features</h2>
+        <div class="features">
+          <article class="feature">
+            <h3>Responsive by default</h3>
+            <p class="muted">Mobile-first grid layout and readable typography that adapts to all screens.</p>
+          </article>
+          <article class="feature">
+            <h3>Accessible</h3>
+            <p class="muted">Semantic structure, visible focus styles, and high contrast for readability.</p>
+          </article>
+          <article class="feature">
+            <h3>Customizable</h3>
+            <p class="muted">Change colors and spacing using CSS variables at the top of the file.</p>
+          </article>
+          <article class="feature">
+            <h3>Small footprint</h3>
+            <p class="muted">No external deps — drop-in HTML that works offline.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="get" style="margin-bottom:34px">
+        <div class="card">
+          <h2 style="margin-top:0">Ready to start?</h2>
+          <p class="muted">Copy this template, change the brand, and you’re good to go.</p>
+          <div class="row" style="margin-top:12px">
+            <a class="btn" href="#">Use this template</a>
+            <a href="#contact" class="muted">Contact sales</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div>© <strong>RocketBootstrap</strong> <span class="muted">2025</span></div>
+        <div class="muted">Made with care • Built for speed</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Mobile nav toggle (very small JS, no frameworks)
+    const mobileToggle = document.getElementById('mobileToggle');
+    let navOpen = false;
+    mobileToggle?.addEventListener('click', ()=>{
+      navOpen = !navOpen;
+      if(navOpen){
+        // create a simple mobile menu
+        const menu = document.createElement('div');
+        menu.id = 'mobileMenu';
+        menu.style.position='fixed';
+        menu.style.top='72px';
+        menu.style.right='24px';
+        menu.style.background='rgba(2,6,23,0.9)';
+        menu.style.border='1px solid rgba(255,255,255,0.04)';
+        menu.style.padding='12px';
+        menu.style.borderRadius='10px';
+        menu.innerHTML = `<a href="#features" style="display:block;margin-bottom:8px;color:var(--card)">Features</a><a href="#pricing" style="display:block;margin-bottom:8px;color:var(--card)">Pricing</a><a href="#docs" style="display:block;margin-bottom:8px;color:var(--card)">Docs</a><a class="btn" href="#get">Get started</a>`;
+        document.body.appendChild(menu);
+        mobileToggle.textContent = '✕';
+      } else {
+        const existing = document.getElementById('mobileMenu');
+        existing?.remove();
+        mobileToggle.textContent = '☰';
+      }
+    });
+  </script>
+</body>
+</html>
